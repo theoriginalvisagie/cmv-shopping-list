@@ -21,11 +21,12 @@
 
     public function addItem($data){
       // Prepare Query
-      $this->db->query('INSERT INTO items (item, qty) VALUES (:item, :qty)');
+      $sql = "INSERT INTO items (item, qty) VALUES (:item, :qty)";
+      $this->db->query($sql);
 
       // Bind Values
-      $this->db->bind(':item', $data['item']);
-      $this->db->bind(':qty', $data['qty']);
+      $this->db->bind(":item", $data['item']);
+      $this->db->bind(":qty", $data['qty']);
       
       //Execute
       if($this->db->execute()){
