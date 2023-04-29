@@ -8,8 +8,8 @@
       <a class="btn btn-primary pull-right" href="<?php echo URLROOT; ?>/items/add"><i class="fa fa-pencil" aria-hidden="true"></i> Add Post</a>
     </div>
   </div>
-
   <ul>
+
   <?php foreach($data as $key=>$value) : ?>
       <li>
         <input type='checkbox' name='checkbox_<?php echo $value['id']?>' >
