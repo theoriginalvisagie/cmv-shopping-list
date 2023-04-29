@@ -1,8 +1,8 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 <a href="<?php echo URLROOT; ?>" class="btn btn-light"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
       <div class="card card-body bg-light mt-5">
-        <h2>Add Itemss</h2>
-        <p>Create a post with this form</p>
+        <h2>Add Items</h2>
+        <p>Add an item to your shopping list</p>
         <form action="<?php echo URLROOT; ?>/items/add" method="post">
           <div class="form-group">
               <label>Item:<sup>*</sup></label>
