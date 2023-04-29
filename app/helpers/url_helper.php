@@ -1,5 +1,10 @@
 <?php
   // Simple page redirect
-  function redirect($page){
-    header('location: '.URLROOT.'/'.$page);
+  function redirect($page = ""){
+    if(empty($page)){
+      header("location: ".URLROOT);
+    }else{
+      header("location: ".URLROOT."/".$page);
+    }
+    
   }
