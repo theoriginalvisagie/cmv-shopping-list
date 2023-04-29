@@ -8,12 +8,16 @@
       <a class="btn btn-primary pull-right" href="<?php echo URLROOT; ?>/items/add"><i class="fa fa-pencil" aria-hidden="true"></i> Add Post</a>
     </div>
   </div>
-  <ul>
-
+  
+  <ul class="list-group list-group-flush">
   <?php foreach($data as $key=>$value) : ?>
-      <li>
+      <li class="list-group-item align-items-center">
         <input type='checkbox' name='checkbox_<?php echo $value['id']?>' >
-        <label for='checkbox_<?php echo $value['id']?>' class="card-title">Item: <?php echo $value['item']." x ". $value['qty'] ?></label>
+        <label for='checkbox_<?php echo $value['id']?>' class="card-title"><?php echo $value['item']." x ". $value['qty'] ?></label>
+        <div class="tools">
+          <button class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+          <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </div>
       </li>
   <?php endforeach; ?>
   </ul>
