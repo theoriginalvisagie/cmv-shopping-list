@@ -5,7 +5,7 @@
     <h1>Shopping Items</h1>
     </div>
     <div class="col-md-6">
-      <a class="btn btn-primary pull-right" href="<?php echo URLROOT; ?>/items/add"><i class="fa fa-pencil" aria-hidden="true"></i> Add Post</a>
+      <a class="btn btn-primary pull-right" href="<?php echo URLROOT; ?>/items/add"><i class="fa fa-pencil" aria-hidden="true"></i> Add Item</a>
     </div>
   </div>
   
