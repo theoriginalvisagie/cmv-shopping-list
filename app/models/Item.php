@@ -36,4 +36,13 @@
       }
     }
 
+    function getItemById($id){
+      $sql = "SELECT * FROM items WHERE id = $id";
+      $this->db->query($sql);
+
+      $results = $this->db->resultset();
+      $results = json_decode(json_encode($results), true);
+      return $results[0];
+    }
+
   }

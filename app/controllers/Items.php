@@ -30,7 +30,7 @@
           "qty_err" => ""
         ];
 
-         if(empty($data['item'])){
+        if(empty($data['item'])){
           $data['item_err'] = "Please enter a name";
 
           if(empty($data['quantity'])){
@@ -71,31 +71,29 @@
         $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         
         $data = [
-          'id' => $id,
-          'title' => trim($_POST['title']),
-          'body' => trim($_POST['body']),
-          'user_id' => $_SESSION['user_id'],   
-          'title_err' => '',
-          'body_err' => ''
+          "item" => trim($_POST['item']),
+          "qty" => trim($_POST['qty']),  
+          "item_err" => '',
+          "qty_err" => ""
         ];
 
          // Validate email
-         if(empty($data['title'])){
-          $data['title_err'] = 'Please enter name';
-          // Validate name
-          if(empty($data['body'])){
-            $data['body_err'] = 'Please enter the post body';
+        if(empty($data['item'])){
+          $data['item_err'] = "Please enter a name";
+
+          if(empty($data['quantity'])){
+            $data['qty_err'] = "Please enter a quantity";
           }
         }
 
         // Make sure there are no errors
-        if(empty($data['title_err']) && empty($data['body_err'])){
+        if(empty($data['item_err']) && empty($data['qty_err'])){
           // Validation passed
           //Execute
           if($this->postModel->updatePost($data)){
           // Redirect to login
           flash('item_message', 'item Updated');
-          redirect('items');
+          redirect();
           } else {
             die('Something went wrong');
           }
@@ -106,17 +104,11 @@
 
       } else {
         // Get post from model
-        $post = $this->postModel->getPostById($id);
-
-        // Check for owner
-        if($post->user_id != $_SESSION['user_id']){
-          redirect('items');
-        }
-
+        $item = $this->itemModel->getItemById($id);
         $data = [
           'id' => $id,
-          'title' => $post->title,
-          'body' => $post->body,
+          'item' => $item['item'],
+          'qty' => $item['qty'],
         ];
 
         $this->view('items/edit', $data);
