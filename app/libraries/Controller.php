@@ -20,8 +20,7 @@
         require_once '../app/views/'.$url.'.php';
       } else {
         // No view exists
-        echo $url;
-        die('View does not exist');
+        die('View does not exist'. $url);
       }
     }
   }
