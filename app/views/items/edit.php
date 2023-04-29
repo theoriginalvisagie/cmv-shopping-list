@@ -27,7 +27,7 @@
                   $noActive = "active";
                 }
               ?>
-              <select name="cars" id="cars">
+              <select name="checked" id="checked">
                 <option value="Yes" <?php echo $yesActive; ?> >Yes</option>
                 <option value="No" <?php echo $noActive; ?> >No</option>
               </select>

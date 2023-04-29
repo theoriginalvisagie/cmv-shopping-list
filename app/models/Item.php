@@ -45,4 +45,22 @@
       return $results[0];
     }
 
+    function updateItem($data){
+      // Prepare Query
+      $sql = "UPDATE items SET item=:item, qty=:qty, checked=:checked WHERE id=:id";
+      $this->db->query($sql);
+      // Bind Values
+      $this->db->bind(":item", $data['item']);
+      $this->db->bind(":qty", $data['qty']);
+      $this->db->bind(":id", $data['id']);
+      $this->db->bind(":checked", $data['checked']);
+      
+      //Execute
+      if($this->db->execute()){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
   }

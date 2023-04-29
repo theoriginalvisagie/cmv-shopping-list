@@ -72,7 +72,9 @@
         
         $data = [
           "item" => trim($_POST['item']),
-          "qty" => trim($_POST['qty']),  
+          "qty" => trim($_POST['quantity']),  
+          "id" => trim($_POST['id']), 
+          "checked" => trim($_POST['checked']),   
           "item_err" => '',
           "qty_err" => ""
         ];
@@ -90,7 +92,7 @@
         if(empty($data['item_err']) && empty($data['qty_err'])){
           // Validation passed
           //Execute
-          if($this->postModel->updatePost($data)){
+          if($this->itemModel->updateItem($data)){
           // Redirect to login
           flash('item_message', 'item Updated');
           redirect();
@@ -109,6 +111,7 @@
           'id' => $id,
           'item' => $item['item'],
           'qty' => $item['qty'],
+          'checked' => $item['checked']
         ];
 
         $this->view('items/edit', $data);
