@@ -16,7 +16,7 @@
         <label for='checkbox_<?php echo $value['id']?>' class="card-title"><?php echo $value['item']." x ". $value['qty'] ?></label>
         <div class="tools">
           <a class="btn btn-warning" href="<?php echo URLROOT; ?>/items/edit/<?php echo $value['id']?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-          <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button class="btn btn-danger" onclick="removeItem('<?php echo $value['id']?>')"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </div>
       </li>
   <?php endforeach; ?>
