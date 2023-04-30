@@ -11,8 +11,15 @@
   
   <ul class="list-group list-group-flush">
   <?php foreach($data as $key=>$value) : ?>
+  <?php
+        $checked = "";
+
+        if($value['checked'] == "Yes"){
+          $checked = "checked";
+        }
+      ?>
       <li class="list-group-item align-items-center">
-        <input type='checkbox' name='checkbox_<?php echo $value['id']?>' >
+        <input type='checkbox' id='checkbox_<?php echo $value['id']?>' name='checkbox_<?php echo $value['id']?>' <?php echo $checked;?> onchange="setItemAsChecked('<?php echo $value['id']?>')">
         <label for='checkbox_<?php echo $value['id']?>' class="card-title"><?php echo $value['item']." x ". $value['qty'] ?></label>
         <div class="tools">
           <a class="btn btn-warning" href="<?php echo URLROOT; ?>/items/edit/<?php echo $value['id']?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

@@ -1,7 +1,7 @@
 function removeItem(id){
     Swal.fire({
         title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        text: 'You won't be able to revert this!'',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -33,4 +33,15 @@ function removeItem(id){
             });
         }
       })
+}
+
+function setItemAsChecked(id){
+    let checked = $(`#checkbox_${id}`).is(':checked');
+    $.ajax({  
+        type: 'post',  
+        url: window.location.origin + "/cmv-shopping-list/public/ajax/getAjax.php", 
+        data: {action:'checkItem', id:id, checked:checked},
+        success: function(response) {
+        }
+    });
 }
