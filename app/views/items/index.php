@@ -1,5 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
   <?php flash('item_message'); ?>
+  <div class='alert alert-success'>Github Repo: <a target='_blank' href='https://github.com/theoriginalvisagie/cmv-shopping-list'>cmv-shopping-list</a></div>
   <div class="row mb-3">
     <div class="col-md-6">
     <h1>Shopping Items</h1>
