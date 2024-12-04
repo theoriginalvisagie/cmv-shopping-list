@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `chrismhjxb_db2`
 --
-CREATE DATABASE IF NOT EXISTS `chrismhjxb_db2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `chrismhjxb_db2`;
+CREATE DATABASE IF NOT EXISTS `shopping_list` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `shopping_list`;
 
 -- --------------------------------------------------------
 
