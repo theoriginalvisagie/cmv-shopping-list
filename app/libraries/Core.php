@@ -1,4 +1,16 @@
 <?php
+
+  if (getenv("APP_ENV") === "development" && getenv("APP_DEBUG") === "true") {
+    // Display errors only in development mode when APP_DEBUG is true
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+  } else {
+    // Hide errors in all other cases
+    ini_set('display_errors', '0');
+    ini_set('display_startup_errors', '0');
+    error_reporting(0); // Disable error reporting
+  }
   /* 
    *  APP CORE CLASS
    *  Creates URL & Loads Core Controller
