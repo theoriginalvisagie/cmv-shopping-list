@@ -3,7 +3,7 @@
   <div class='alert alert-success'>Github Repo: <a target='_blank' href='https://github.com/theoriginalvisagie/cmv-shopping-list'>cmv-shopping-list</a></div>
   <div class="row mb-3">
     <div class="col-md-6">
-    <h1>Shopping Items</h1>
+    <h1>My Shopping Items</h1>
     </div>
     <div class="col-md-6">
       <a class="btn btn-primary pull-right" href="<?php echo URLROOT; ?>/items/add"><i class="fa fa-pencil" aria-hidden="true"></i> Add Item</a>
