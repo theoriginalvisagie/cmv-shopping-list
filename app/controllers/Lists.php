@@ -62,60 +62,58 @@
         $this->view('lists/add', $data);
       }
     }
-//
-//    // Edit Post
-//    public function edit($id){
-//      if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//        // Sanitize POST
-//        $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-//
-//        $data = [
-//          "item" => trim($_POST['item']),
-//          "qty" => trim($_POST['quantity']),
-//          "id" => trim($_POST['id']),
-//          "checked" => trim($_POST['checked']),
-//          "item_err" => '',
-//          "qty_err" => ""
-//        ];
-//
-//         // Validate email
-//        if(empty($data['item'])){
-//          $data['item_err'] = "Please enter a name";
-//
-//          if(empty($data['quantity'])){
-//            $data['qty_err'] = "Please enter a quantity";
-//          }
-//        }
-//
-//        // Make sure there are no errors
-//        if(empty($data['item_err']) && empty($data['qty_err'])){
-//          // Validation passed
-//          //Execute
-//          if($this->itemModel->updateItem($data)){
-//          // Redirect to login
-//          flash('item_message', 'item Updated');
-//          redirect();
-//          } else {
-//            die('Something went wrong');
-//          }
-//        } else {
-//          // Load view with errors
-//          $this->view('items/edit', $data);
-//        }
-//
-//      } else {
-//        // Get post from model
-//        $item = $this->itemModel->getItemById($id);
-//        $data = [
-//          'id' => $id,
-//          'item' => $item['item'],
-//          'qty' => $item['qty'],
-//          'checked' => $item['checked']
-//        ];
-//
-//        $this->view('items/edit', $data);
-//      }
-//    }
+
+    // Edit Post
+    public function edit($id){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Sanitize POST
+        $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        $data = [
+          "name" => trim($_POST['name']),
+          "description" => trim($_POST['description']),
+          "id" => trim($_POST['id']),
+          "name_err" => '',
+          "description_err" => ""
+        ];
+
+         // Validate email
+        if(empty($data['name'])){
+          $data['name_err'] = "Please enter a name";
+
+          if(empty($data['description'])){
+            $data['description_err'] = "Please enter a description";
+          }
+        }
+
+        // Make sure there are no errors
+        if(empty($data['name_err']) && empty($data['description_err'])){
+          // Validation passed
+          //Execute
+          if($this->listModel->updateList($data)){
+          // Redirect to login
+          flash('item_message', 'List Updated');
+          redirect("/lists");
+          } else {
+            die('Something went wrong');
+          }
+        } else {
+          // Load view with errors
+          $this->view('lists/edit', $data);
+        }
+
+      } else {
+        // Get post from model
+        $list = $this->listModel->getListById($id);
+        $data = [
+          'id' => $id,
+          'name' => $list['name'],
+          'description' => $list['description'],
+        ];
+
+        $this->view('lists/edit', $data);
+      }
+    }
 //
 //    // Delete Post
 //    public function delete($id){
