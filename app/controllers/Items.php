@@ -45,9 +45,9 @@
           //Validation passed
           //Execute
           if($this->itemModel->addItem($data)){
-            // Redirect to login
+            // Redirect to items
             flash("items_added", "Items Added");
-            redirect();
+            redirect("/items");
           } else {
             die("Something went wrong");
           }

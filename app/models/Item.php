@@ -26,13 +26,36 @@
       // Bind Values
       $this->db->bind(":item", $data['item']);
       $this->db->bind(":qty", $data['qty']);
-      
+
+      //add a notification
+
       //Execute
       if($this->db->execute()){
-        return true;
+          $notificationAdded = $this->createNotification($this->db->lastInsertId());
+          if($notificationAdded){
+              return true;
+          }else{
+              return false;
+          }
       } else {
         return false;
       }
+    }
+
+    public function createNotification($itemID =""){
+        $sql = "INSERT INTO notifications (name, description, item_id, has_read) VALUES (:name, :description, :item_id, :has_read)";
+        $this->db->query($sql);
+
+        $this->db->bind(":name", "New Item Added");
+        $this->db->bind(":description", "An item as been added to your shopping list");
+        $this->db->bind(":item_id", $itemID);
+        $this->db->bind(":has_read", "No");
+
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function getItemById($id){

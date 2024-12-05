@@ -3,7 +3,7 @@
       <div class="card card-body bg-light mt-5">
         <h2>Add Items</h2>
         <p>Add an item to your shopping list</p>
-        <form action="<?php echo URLROOT; ?>/items/add" method="post">
+        <form action="<?php echo URLROOT; ?>items/add" method="post">
           <div class="form-group">
               <label>Item:<sup>*</sup></label>
               <input type="text" name="item" class="form-control form-control-lg <?php echo (!empty($data['item_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['item']; ?>" placeholder="Add an item...">
