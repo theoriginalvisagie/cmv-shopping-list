@@ -13,7 +13,6 @@ class Notification {
 
         $results = $this->db->resultset();
 
-//         print_r($results,true);
         return $results;
     }
 

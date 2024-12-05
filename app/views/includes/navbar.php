@@ -1,3 +1,12 @@
+<?php
+require_once APPROOT . '/models/Notification.php';
+
+// Instantiate the Notification model
+    $notificationModel = new Notification();
+    $unreadNotifications = $notificationModel->getNotifications();
+//    $hasUnread = !empty($unreadNotifications); // Check if there are unread notifications
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <div class="container">
     <a class="navbar-brand" href="#"><?php echo SITENAME; ?></a>
@@ -15,15 +24,16 @@
       </ul>
     </div>
       <div>
-              <a class="nav-link" href="<?php echo URLROOT; ?>/notifications">
-                  <button type="button" class="btn btn-primary position-relative">
-                      Notifications
+          <a class="nav-link" href="<?php echo URLROOT; ?>/notifications">
+              <button type="button" class="btn btn-primary position-relative">
+                  Notifications
+                  <?php if(!empty($unreadNotifications)): ?>
                       <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                         <span class="visually-hidden">New alerts</span>
                       </span>
-                  </button>
-              </a>
-          </button>
+                  <?php endif ?>
+              </button>
+          </a>
       </div>
   </div>
 </nav>
