@@ -83,3 +83,29 @@ function removeList(id){
         }
     })
 }
+
+ function markAsRead(id){
+     $.ajax({
+         type: 'post',
+         url: window.location.origin + "/cmv-shopping-list/public/ajax/getAjax.php",
+         data: {action:'markAsRead', id:id},
+         success: function(response) {
+             console.log(response)
+             if(response == "true"){
+                 // Swal.fire({
+                 //     title: 'Deleted!',
+                 //     text: 'Your list has been removed.',
+                 //     icon: 'success'
+                 // }).then (function (){
+                 //     location.reload();
+                 // })
+             }else{
+                 // Swal.fire({
+                 //     title: 'Error!',
+                 //     text: 'An error occurd. Contact Support',
+                 //     icon: 'warning'
+                 // })
+             }
+         }
+     });
+ }

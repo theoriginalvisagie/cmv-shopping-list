@@ -28,6 +28,18 @@
             }else{
                 echo "false";
             }
+        }else if($_POST['action'] == "markAsRead"){
+            $sql = "UPDATE notifications SET has_read = 'Yes' WHERE id = '{$_POST['id']}'";
+            $db = new Database();
+            $db->query($sql);
+
+            $res = $db->execute();
+
+            if($res){
+                echo "true";
+            }else{
+                echo "false";
+            }
         }else if($_POST['action'] == "checkItem"){
             print_r($_POST);
             if($_POST['checked'] == "true"){
