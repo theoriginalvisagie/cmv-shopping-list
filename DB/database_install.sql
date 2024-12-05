@@ -60,3 +60,34 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+DROP TABLE IF EXISTS `lists`;
+CREATE TABLE `lists` (
+                         `id` int(11) NOT NULL,
+                         `name` text NOT NULL,
+                         `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `lists`
+--
+ALTER TABLE `lists`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `lists`
+--
+ALTER TABLE `lists`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+CREATE TABLE `shopping_list`.`notifications` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `description` TEXT NOT NULL , `item_id` INT NOT NULL , `has_read` VARCHAR(3) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
