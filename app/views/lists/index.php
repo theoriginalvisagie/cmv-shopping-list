@@ -18,13 +18,12 @@
         </thead>
         <tbody>
             <?php foreach ($data['lists'] as $list): ?>
-<!--            --><?php //print_r($list)?>
                 <tr>
                     <td><?php echo htmlspecialchars($list['name']); ?></td>
                     <td><?php echo htmlspecialchars($list['description']); ?></td>
                     <td>
                         <a class="btn btn-warning" href="<?php echo URLROOT; ?>/lists/edit/<?php echo $list['id']?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                        <button class="btn btn-outline-danger" onclick="">Remove</button>
+                        <button class="btn btn-danger" onclick="removeList('<?php echo $list['id']?>')"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
             <?php endforeach; ?>
