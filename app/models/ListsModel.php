@@ -15,25 +15,25 @@
 
       return $results;
     }
-//
-//
-//    public function addList($data){
-//      // Prepare Query
-//      $sql = "INSERT INTO lists (name, description) VALUES (:name, :description)";
-//      $this->db->query($sql);
-//
-//      // Bind Values
-//      $this->db->bind(":name", $data['name']);
-//      $this->db->bind(":description", $data['description']);
-//
-//      //Execute
-//      if($this->db->execute()){
-//        return true;
-//      } else {
-//        return false;
-//      }
-//    }
-//
+
+
+    public function addList($data){
+      // Prepare Query
+      $sql = "INSERT INTO lists (name, description) VALUES (:name, :description)";
+      $this->db->query($sql);
+
+      // Bind Values
+      $this->db->bind(":name", $data['name']);
+      $this->db->bind(":description", $data['description']);
+
+      //Execute
+      if($this->db->execute()){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
     function getListById($id){
       $sql = "SELECT * FROM lists WHERE id = $id";
       $this->db->query($sql);

@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
             <label>Description:<sup>*</sup></label>
-            <input type="number" name="description" class="form-control form-control-lg <?php echo (!empty($data['description_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['description']; ?>" placeholder="Add a description...">
+            <input type="text" name="description" class="form-control form-control-lg <?php echo (!empty($data['description_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['description']; ?>" placeholder="Add a description...">
             <span class="invalid-feedback"><?php echo $data['description_err']; ?></span>
         </div>
         <input type="submit" class="btn btn-success" value="Submit">

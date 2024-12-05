@@ -44,7 +44,7 @@
           if($this->listModel->addList($data)){
             // Redirect to login
             flash("list_added", "List Added");
-            redirect();
+            redirect("lists");
           } else {
             die("Something went wrong");
           }
