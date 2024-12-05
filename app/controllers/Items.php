@@ -1,5 +1,7 @@
 <?php
   class Items extends Controller{
+    private $itemModel;
+
     public function __construct(){
       // Load Models
       $this->itemModel = $this->model("Item");
