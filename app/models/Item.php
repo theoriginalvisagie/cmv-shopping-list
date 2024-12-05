@@ -6,7 +6,6 @@
       $this->db = new Database;
     }
 
-
     public function getItems(){
       $sql = "SELECT * FROM items";
       

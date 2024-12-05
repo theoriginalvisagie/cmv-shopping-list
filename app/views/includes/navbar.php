@@ -8,6 +8,7 @@
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="<?php echo URLROOT; ?>">Home</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/lists">Lists</a>
         </li>
       </ul>
     </div>

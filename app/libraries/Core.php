@@ -11,6 +11,7 @@
     ini_set('display_startup_errors', '0');
     error_reporting(0); // Disable error reporting
   }
+
   /* 
    *  APP CORE CLASS
    *  Creates URL & Loads Core Controller
